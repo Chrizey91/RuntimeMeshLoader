@@ -1,0 +1,1 @@
+The asset was downloaded from https://free3d.com/3d-model/45-acp-smith-and-wesson-13999.html and further exporter using blender as the provided FBX-format did not work with the importer.

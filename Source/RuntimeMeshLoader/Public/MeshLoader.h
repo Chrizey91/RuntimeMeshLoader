@@ -83,4 +83,7 @@ class RUNTIMEMESHLOADER_API UMeshLoader : public UBlueprintFunctionLibrary
 
 	UFUNCTION(BlueprintCallable,Category="RuntimeMeshLoader")
 	static TArray<FString> ListFolders(FString DirectoryPath);
+
+	UFUNCTION(BlueprintCallable,Category="RuntimeMeshLoader")
+	static UTexture2D* LoadTexture2DFromFile(const FString& FullFilePath, bool& IsValid, int32& Width, int32& Height);
 };

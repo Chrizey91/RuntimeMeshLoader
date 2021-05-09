@@ -8,11 +8,11 @@ public class RuntimeMeshLoader : ModuleRules
 	public RuntimeMeshLoader(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-        var thirdPartyPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..\\..\\ThirdParty/"));
+        var thirdPartyPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "..\\..\\ThirdParty\\"));
 
 		PublicIncludePaths.AddRange(
 			new string[] {
-                Path.Combine(thirdPartyPath, "assimp/include")
+                Path.Combine(thirdPartyPath, "assimp\\include")
 				// ... add public include paths required here ...
 			}
 			);

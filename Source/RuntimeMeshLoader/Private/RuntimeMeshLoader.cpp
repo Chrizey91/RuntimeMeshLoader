@@ -9,7 +9,9 @@
 void FRuntimeMeshLoaderModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	DllHandle = FPlatformProcess::GetDllHandle(*(IPluginManager::Get().FindPlugin("RuntimeMeshLoader")->GetBaseDir() + "..\\..\\ThirdParty\\assimp\\bin\\assimp-vc142-mt.dll"));
+	FString s = IPluginManager::Get().FindPlugin("RuntimeMeshLoader")->GetBaseDir();
+	UE_LOG(LogTemp, Log, TEXT("%s"), *s);
+	DllHandle = FPlatformProcess::GetDllHandle(*(IPluginManager::Get().FindPlugin("RuntimeMeshLoader")->GetBaseDir() + "\\ThirdParty\\assimp\\bin\\assimp-vc142-mt.dll"));
 }
 
 void FRuntimeMeshLoaderModule::ShutdownModule()

@@ -1,6 +1,6 @@
 RuntimeMeshLoader
 ==================
-A pluging for Unreal Engine 4, which allows to import meshes during runtime.
+A pluging for Unreal Engine 4 and Unreal Engine 5, which allows to import meshes during runtime.
 
 This is a fork of the original [RuntimeMeshLoader repository](https://github.com/GameInstitute/RuntimeMeshLoader).
 

@@ -7,6 +7,8 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#include "Modules/ModuleManager.h"
+#include "Misc/FileHelper.h"
 #include "IImageWrapper.h"
 #include "Runtime/ImageWrapper/Public/IImageWrapperModule.h"
 #include "HAL/FileManager.h"

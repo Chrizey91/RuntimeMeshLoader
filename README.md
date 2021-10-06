@@ -17,7 +17,7 @@ RuntimeMeshLoader (RML) uses [Assimp](https://github.com/assimp/assimp) as a thi
 
 
 ## Supported operating systems
-Currently, only Windows x64 systems are supported.
+Currently, Windows (x64) as well as Linux (Ubuntu 20) have been verified.
 
 ## Supported Unreal Enginge versions
 The Plugin was tested under Unreal Engine v. 4.25.3 as well as version 5 (Early Access). However, any modern version of Unreal Engine should be compatible with it.

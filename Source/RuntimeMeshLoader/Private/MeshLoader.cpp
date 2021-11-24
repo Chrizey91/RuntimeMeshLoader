@@ -166,6 +166,9 @@ UTexture2D* UMeshLoader::LoadTexture2DFromFile(const FString& FullFilePath, bool
 
 	//Load From File
 	TArray<uint8> RawFileData;
+	/*If you use lower unreal engine,for example the version is 4.20,you may get a error message in bulid,you should use The following code replace "TArray<uint8> RawFileData;"
+	const TArray<uint8>* UncompressedBGRA = NULL;*/
+	
 	if (!FFileHelper::LoadFileToArray(RawFileData, * FullFilePath)) 
 	{
 		return NULL;
@@ -193,6 +196,8 @@ UTexture2D* UMeshLoader::LoadTexture2DFromFile(const FString& FullFilePath, bool
 			//Copy!
 			void* TextureData = LoadedT2D->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
 			FMemory::Memcpy(TextureData, UncompressedBGRA.GetData(), UncompressedBGRA.Num());
+			/*if you use the code"const TArray<uint8>* UncompressedBGRA = NULL;"，Accordingly, since UncompressedBGRA becomes a pointer, you need to use a pointer reference method, like this
+			FMemory::Memcpy(TextureData, UncompressedBGRA->GetData(), UncompressedBGRA->Num());*/
 			LoadedT2D->PlatformData->Mips[0].BulkData.Unlock();
 
 			//Update!

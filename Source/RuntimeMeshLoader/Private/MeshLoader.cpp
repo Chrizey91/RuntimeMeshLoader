@@ -194,11 +194,11 @@ UTexture2D* UMeshLoader::LoadTexture2DFromFile(const FString& FullFilePath, bool
 			Height = ImageWrapper->GetHeight();
 			 
 			//Copy!
-			void* TextureData = LoadedT2D->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
+			void* TextureData = LoadedT2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
 			FMemory::Memcpy(TextureData, UncompressedBGRA.GetData(), UncompressedBGRA.Num());
 			/*if you use the code"const TArray<uint8>* UncompressedBGRA = NULL;"，Accordingly, since UncompressedBGRA becomes a pointer, you need to use a pointer reference method, like this
 			FMemory::Memcpy(TextureData, UncompressedBGRA->GetData(), UncompressedBGRA->Num());*/
-			LoadedT2D->PlatformData->Mips[0].BulkData.Unlock();
+			LoadedT2D->GetPlatformData()->Mips[0].BulkData.Unlock();
 
 			//Update!
 			LoadedT2D->UpdateResource();

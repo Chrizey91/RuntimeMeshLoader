@@ -67,10 +67,10 @@ public class RuntimeMeshLoader : ModuleRules
 		if (Target.Platform == UnrealTargetPlatform.Linux)
 		{
 			var AssimpLib = Path.Combine(ModuleDirectory, "..", "..", "ThirdParty", "assimp", "lib", "libassimp.so");
-
 			PublicAdditionalLibraries.Add(AssimpLib);
 
-			RuntimeDependencies.Add(AssimpLib);
+			var AssimpLibRuntime = AssimpLib + ".5"; // libassimp.so -> libassimp.so.5
+			RuntimeDependencies.Add(AssimpLibRuntime);
 		}
 	}
 }
